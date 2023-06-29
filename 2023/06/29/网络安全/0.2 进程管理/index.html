@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="进程管理进程管理进程在系统中，每一段执行程序就成为一个进程，系统对进程进行id编号。 对于 CentOS6，管理进程的方式为 init ； 对于 CentOS7，管理进程的方式为 systemd ； 进程属性 可以使用 ps 命令通过指定参数来进行查看。  常用参数：  a 显示当前终端关联的所有进程  u 基于用户的格式显示  x 显示所有进程，不以终端来区分    输出参数  VSZ 程序所占">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://nous042.github.io/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.2%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="进程管理进程管理进程在系统中，每一段执行程序就成为一个进程，系统对进程进行id编号。 对于 CentOS6，管理进程的方式为 init ； 对于 CentOS7，管理进程的方式为 systemd ； 进程属性 可以使用 ps 命令通过指定参数来进行查看。  常用参数：  a 显示当前终端关联的所有进程  u 基于用户的格式显示  x 显示所有进程，不以终端来区分    输出参数  VSZ 程序所占">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-29T03:44:29.915Z">
+<meta property="article:modified_time" content="2023-06-28T09:05:13.404Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/project/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/project/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nous042.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-网络安全/0.2 进程管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.2%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2023-06-29T03:44:29.915Z" itemprop="datePublished">2023-06-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2><h4 id="进程管理-1"><a href="#进程管理-1" class="headerlink" title="进程管理"></a>进程管理</h4><h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><p>在系统中，每一段执行程序就成为一个进程，系统对进程进行id编号。</p>
+<p>对于 CentOS6，管理进程的方式为 <code>init</code> ；</p>
+<p>对于 CentOS7，管理进程的方式为 <code>systemd</code> ；</p>
+<h5 id="进程属性"><a href="#进程属性" class="headerlink" title="进程属性"></a>进程属性</h5><ul>
+<li><p>可以使用 <code>ps</code> 命令通过指定参数来进行查看。</p>
+<ul>
+<li><p>常用参数：</p>
+<ul>
+<li><p><code>a</code></p>
+<p>显示当前终端关联的所有进程</p>
+</li>
+<li><p><code>u</code></p>
+<p>基于用户的格式显示</p>
+</li>
+<li><p><code>x</code></p>
+<p>显示所有进程，不以终端来区分</p>
+</li>
+</ul>
+</li>
+<li><p>输出参数</p>
+<ul>
+<li><p><code>VSZ</code></p>
+<p>程序所占虚拟内存大小，单位 <code>kB</code></p>
+</li>
+<li><p><code>RSS</code></p>
+<p>程序所占物理内存大小，单位 <code>kB</code></p>
+</li>
+<li><p><code>TIME</code></p>
+<p>所用 CPU 时间</p>
+</li>
+</ul>
+</li>
+<li><p>常见用法</p>
+<ul>
+<li><p><code>ps -aux | more</code></p>
+<p>进程过多可以使用此命令讲进程数据输出到 <code>more</code></p>
+<p>使用 BSD 格式进行显示</p>
+</li>
+<li><p><code>ps -ef</code></p>
+<p><code>e</code>：显示所有进程</p>
+<p><code>f</code>：显示完整格式输出</p>
+<p>使用标准格式进行显示</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>进程 <code>ID</code>（<code>PID</code>）、父进程 <code>ID</code>（<code>PPID</code>）、启动进程用户 <code>UID</code>、归属组织 <code>GID</code>、进程的状态、进程优先级、进程连接的终端名称、进程资源占用</p>
+<ul>
+<li><p>对于 <code>GID</code> 的输出参数</p>
+<ul>
+<li><p><code>R</code></p>
+<p>进程正在运行中</p>
+</li>
+<li><p><code>S</code></p>
+<p>现在进程正在睡眠，可以通过信号量来唤醒</p>
+</li>
+<li><p><code>T</code></p>
+<p>目前进程正在侦测或者停止</p>
+</li>
+<li><p><code>Z</code></p>
+<p>Zombie僵尸进程（进程假死；进程结束，但是父进程无法停止它）</p>
+</li>
+<li><p><code>D</code></p>
+<p>不可终止状态</p>
+</li>
+<li><p>特殊状态：</p>
+<ul>
+<li><p><code>&lt;</code></p>
+<p>表示进程具有高优先级</p>
+</li>
+<li><p><code>N</code></p>
+<p>表示进程具有高优先级</p>
+</li>
+<li><p><code>L</code></p>
+<p>进程有页面文件锁定在内存中</p>
+</li>
+<li><p><code>s</code>（小写）</p>
+<p>表示控制进程</p>
+</li>
+<li><p><code>I</code></p>
+<p>表示多线程</p>
+</li>
+<li><p><code>+</code></p>
+<p>表示当前进程运行在前台</p>
+</li>
+<li><p><code>&amp;</code></p>
+<p>表示当前进程运行在后台</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="注1：常用组合键"><a href="#注1：常用组合键" class="headerlink" title="注1：常用组合键"></a>注1：常用组合键</h6><ul>
+<li>Ctrl+C   终止进程</li>
+<li>Ctrl+Z   挂起进程</li>
+<li>Ctrl+D   注销进程</li>
+<li>Ctrl+&#x2F;    退出进程</li>
+</ul>
+<h6 id="注2：进程与线程"><a href="#注2：进程与线程" class="headerlink" title="注2：进程与线程"></a>注2：进程与线程</h6><p>线程是进程中的一个任务，负责当前进程中程序的执行。一个进程至少有一个线程，一个进程也可以存在多个线程，多个线程可共享数据。线程共享进程的堆与方法区资源，但是每个线程有自己的程序计数器与栈。</p>
+<h5 id="查看系统负载"><a href="#查看系统负载" class="headerlink" title="查看系统负载"></a>查看系统负载</h5><ul>
+<li><p><code>uptime</code></p>
+</li>
+<li><p><code>top</code></p>
+<p>动态监控命令</p>
+</li>
+<li><p><code>pstree</code></p>
+<ul>
+<li><code>-u</code> 显示进程用户</li>
+<li><code>-t</code>  显示进程编号</li>
+</ul>
+</li>
+</ul>
+<h5 id="终止进程"><a href="#终止进程" class="headerlink" title="终止进程"></a>终止进程</h5><p>可以通过信号&#x2F;信号量来操作，或者使用命令 <code>kill</code>、<code>killall</code>、<code>pkill</code>。<code>kill</code> 后面跟 <code>PID</code>，若不好用，可以在后面加上信号量 <code>-9</code>（<code>9</code> 表示最高权限，强制进程结束）。如果想批量终止进程可以使用 <code>killall</code> 命令，例如候命跟 <code>nginx</code>，命令会杀死同名进程，此命令同样可加信号量以加强权限。<code>pkill</code> 与 <code>kill</code> 命令类似，但是它会杀死指定名字的所有命令。</p>
+<h6 id="附1：CentOS7-服务管理"><a href="#附1：CentOS7-服务管理" class="headerlink" title="附1：CentOS7 服务管理"></a>附1：CentOS7 服务管理</h6><p>CentOS7 使用 <code>systemd</code> 代替 <code>service</code>。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">systemd start httpd      # 启动进程</span><br><span class="line">systemd restart httpd    # 重启进程</span><br><span class="line">systemd stop httpd       # 停止进程</span><br><span class="line">systemd enable httpd     # 开机自动启动进程</span><br><span class="line">systemd disable httpd    # 开机不自动启动进程</span><br><span class="line">systemd status httpd     # 查看进程状态</span><br></pre></td></tr></table></figure>
+
+<h6 id="附2：CentOS7-防火墙"><a href="#附2：CentOS7-防火墙" class="headerlink" title="附2：CentOS7 防火墙"></a>附2：CentOS7 防火墙</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">查看防火墙开放的端口：</span><br><span class="line">firewall-cmd --zone=public --list-ports </span><br><span class="line">添加防火墙开放端口：</span><br><span class="line">firewall-cmd --zone=public --add-port=port/tcp  --permanent</span><br><span class="line">移除防火墙开放端口：</span><br><span class="line">firewall-cmd --zone=public --add-port=port/tcp  --permanent</span><br><span class="line">添加/移除之后需要下述命令才可以使操作生效：</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">其他命令：</span><br><span class="line">firewall-cmd --help</span><br><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nous042.github.io/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.2%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" data-id="cljglskr200036g7p16z67he7" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.1%20%E5%B8%B8%E8%A7%81%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F%E6%A6%82%E8%BF%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.3%20Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2023/06/29/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/0%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%801/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.1%20%E5%B8%B8%E8%A7%81%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E5%BC%8F%E6%A6%82%E8%BF%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.2%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/project/2023/06/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/0.3%20Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%89%E5%85%A8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/project/2023/06/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/project/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
